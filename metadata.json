@@ -1,0 +1,5 @@
+{
+  "name": "Friction Detection & Intervention Dashboard",
+  "description": "A prototype for a solution that detects user frustration in real-time and proactively intervenes to assist users. It includes an analytics dashboard to visualize friction events, interventions, and outcomes for UX and product teams.",
+  "requestFramePermissions": []
+}

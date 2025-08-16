@@ -1,0 +1,72 @@
+import { FrictionEvent, FrictionType, InterventionType } from '../types';
+
+const now = new Date();
+
+export const demoEvents: FrictionEvent[] = [
+  {
+    id: 'demo-1',
+    type: FrictionType.RageClick,
+    timestamp: new Date(now.getTime() - 1000 * 15),
+    elementId: 'place-order-btn',
+    description: "User clicked the 'Place Order' button 5 times in rapid succession.",
+    interventionTriggered: InterventionType.Chatbot,
+    interventionEffective: true,
+    notes: 'User was likely confused about the next step. The chatbot helped them find the shipping options.',
+  },
+  {
+    id: 'demo-2',
+    type: FrictionType.FormError,
+    timestamp: new Date(now.getTime() - 1000 * 60 * 2),
+    elementId: 'promo-code-input',
+    description: 'User failed to apply a promo code 3 times. Last attempt: "SUMMER10"',
+    interventionTriggered: InterventionType.PromoOffer,
+    interventionEffective: true,
+  },
+  {
+    id: 'demo-3',
+    type: FrictionType.SessionInactivity,
+    timestamp: new Date(now.getTime() - 1000 * 60 * 5),
+    elementId: 'checkout-page',
+    description: 'User has been inactive on the checkout page for over 15 seconds.',
+    interventionTriggered: InterventionType.HelpArticle,
+    interventionEffective: false,
+    notes: 'The help article was too generic. We need to suggest more specific articles based on which form section they were on.',
+  },
+  {
+    id: 'demo-4',
+    type: FrictionType.RageClick,
+    timestamp: new Date(now.getTime() - 1000 * 60 * 8),
+    elementId: 'shipping-method-selector',
+    description: 'User clicked the shipping options 7 times.',
+    interventionTriggered: InterventionType.Chatbot,
+    interventionEffective: false,
+  },
+    {
+    id: 'demo-5',
+    type: FrictionType.RapidNavigation,
+    timestamp: new Date(now.getTime() - 1000 * 60 * 12),
+    elementId: 'header-nav',
+    description: 'User rapidly navigated between Home, Products, and Cart pages.',
+    interventionTriggered: null,
+    interventionEffective: null,
+    notes: 'No intervention is configured for this event type yet. Could be a sign of a user looking for something they cannot find.',
+  },
+  {
+    id: 'demo-6',
+    type: FrictionType.FormError,
+    timestamp: new Date(now.getTime() - 1000 * 60 * 15),
+    elementId: 'credit-card-expiry',
+    description: 'User entered an expired date 4 times.',
+    interventionTriggered: InterventionType.HelpArticle,
+    interventionEffective: true,
+  },
+  {
+    id: 'demo-7',
+    type: FrictionType.RageClick,
+    timestamp: new Date(now.getTime() - 1000 * 60 * 20),
+    elementId: 'place-order-btn',
+    description: "User clicked the 'Place Order' button 4 times.",
+    interventionTriggered: InterventionType.Chatbot,
+    interventionEffective: true,
+  },
+];
